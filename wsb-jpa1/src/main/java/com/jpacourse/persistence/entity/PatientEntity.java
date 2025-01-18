@@ -1,7 +1,6 @@
 package com.jpacourse.persistence.entity;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -35,6 +34,9 @@ public class PatientEntity {
 	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<VisitEntity> visits;
 
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<DrugEntity> drugs;
+
 	public Long getId() { return id; }
 	public void setId(Long id) { this.id = id; }
 
@@ -61,4 +63,7 @@ public class PatientEntity {
 
 	public List<VisitEntity> getVisits() { return visits; }
 	public void setVisits(List<VisitEntity> visits) { this.visits = visits; }
+
+	public List<DrugEntity> getDrugs() { return drugs; }
+	public void setDrugs(List<DrugEntity> drugs) {this.drugs = drugs;}
 }

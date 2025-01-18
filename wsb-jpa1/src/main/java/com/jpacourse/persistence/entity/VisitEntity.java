@@ -51,4 +51,16 @@ public class VisitEntity {
 
 	public List<MedicalTreatmentEntity> getTreatments() { return treatments; }
 	public void setTreatments(List<MedicalTreatmentEntity> treatments) { this.treatments = treatments; }
+
+	public PatientEntity getDoctor() {
+		return null;
+	}
+
+	public LocalDateTime getTime() {
+		return null;
+	}
+
+	public String getDescription() {
+		return null;
+	}
 }

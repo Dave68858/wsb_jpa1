@@ -1,18 +1,13 @@
 package com.jpacourse.persistence.dao;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
-import com.jpacourse.persistence.entity.AddressEntity;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import com.jpacourse.persistence.entity.PatientEntity;
-import com.jpacourse.persistence.entity.VisitEntity;
 
-import java.time.LocalDateTime;
-
-@Repository
-public interface PatientDao extends Dao<PatientEntity, Long>{
+public interface PatientDao extends Dao<PatientEntity, Long> {
+    void addVisit(Long patientId, Long doctorId, LocalDateTime visitTime, String description);
+    List<PatientEntity> findByLastName(String lastName);
+    List<PatientEntity> findByLEKI(String LEKI);
 
 }
